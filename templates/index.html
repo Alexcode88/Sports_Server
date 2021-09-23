@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='./css/styles.css') }}"/>
+    </head>
+    <body>
+        <h1>
+            This page is loading with render_template from Flask
+        </h1>
+        {% if firstName != "" %}
+            <h2>
+                Hey there {{firstName}}
+            </h2>
+        {% endif %}
+        <p>
+            {{sportsList}}
+        </p>
+        <ul>
+            {% for sport in sportsList %}
+                <li>
+                    {{sport}}
+                </li>
+            {% endfor %}
+        </ul>
+        <ol>
+            {% for sportDictionary in listOfSports %}
+                <li>
+                    Name: {{ sportDictionary['name'] }} ID: {{ sportDictionary['id'] }}
+                </li>
+            {% endfor %}
+        </ol>
+    </body>
+</html>
